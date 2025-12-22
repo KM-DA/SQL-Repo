@@ -1,0 +1,89 @@
+SQL( A/B TEST, Cohort 분석)
+1. 프로젝트 개요
+   - 실험 상황 정의 (A/B Test 시나리오)
+   - 가설(Hypothesis)
+   - 실험 목표와 KPI
+
+2. 데이터 구조 설명
+   - 사용 테이블 ERD
+   - 각 컬럼 정의
+
+3. A/B 실험 설계
+   - 실험군, 대조군 정의
+   - 샘플 사이즈 개념(언급만 가능)
+   - 실험기간
+
+4. SQL 분석
+   4-1 실험군/대조군 데이터 추출  
+   4-2 KPI 동향 비교 (CTR, 구매율, 전환율)  
+   4-3 그룹별 평균/분산/샘플수 집계  
+   4-4 통계검정용 테이블 생성 (t-test, z-test 등)  
+   4-5 기간별 전환율 변화 추적  
+   4-6 이상치 제거 및 유효 사용자 필터링  
+
+5. 통계적 유의성 검정
+   - T-test
+   - Chi-square  
+   - p-value 해석
+   - 효과크기(effect size)
+
+6. 결과 시각화(간단한 표 또는 quantile 비교)
+
+7. 인사이트
+   - 어떤 변화가 있었는지
+   - KPI가 실제 비즈니스에 어떤 의미인지
+   - 실험 성공 여부 판단 기준
+
+8. 결론 및 개선 제안
+
+
+Python ARIMA Time Series ML xGboost Random Forest 
+1. 프로젝트 개요  
+   - 문제 정의  : 소노선의 매출추정
+   - 분석 목표(KPI)  : Rev 향상
+   - 사용할 모델  : ARIMA, RandomForest, xGboost
+
+2. 데이터 구조 및 설명  
+   - 컬럼 설명  : ar lf 공급 rev
+   - 데이터 특성  : 항공특성 LF 0~1 / ar range 존재
+   - 예측 문제 유형(회귀/분류/시계열)  : seonality / 휴일유무 / 요일에 상관
+
+3. 전처리(1차)
+   - 결측치 처리  : 부정기 or 이레편 솔팅후 대치 or 삭제
+   - 이상치 처리  : lf 1초과 0 미만 / ar 판매운임초과 / 미정산데이터 하드or 그룹석
+   - 문자열/카테고리 처리  : 전처리 data type 통일
+   - 파생변수 생성  : RPK Yield / ASK RASK 
+
+4. EDA  
+   - 데이터 분포 파악  
+   - 타깃과 주요 변수들의 관계  
+   - 상관관계  
+   - 주요 패턴 및 도메인 인사이트  
+
+5. 전처리(2차)
+   - 스케일링  
+   - 인코딩  
+   - 데이터 분리(train/test/validation)  
+
+6. 모델링  
+   6-1 RandomForest  
+   6-2 XGBoost  
+   6-3 ARIMA or SARIMA (시계열이 있을 경우)  
+
+7. 모델 평가  
+   - ROC / AUC  
+   - Precision / Recall  (Confusion Matrix)
+   - F1-score  (Confusion Matrix)
+   - PR AUC  
+   - Residual plot(회귀 모델일 경우)  X
+   - Feature importance  (랜포,xGboost)
+
+8. 모델 비교  
+   - 성능 비교 표  
+   - 하이퍼파라미터 튜닝 전략(간단히)  
+
+9. 결론 및 비즈니스 적용 가능성  (xGboost)
+
+10. 한계점 및 개선 아이디어  (완전자동화 X, Super Irre 반영불가, 전처리 수작업 필요, 하드웨어성능, 추가 Optimize가능성)
+
+
